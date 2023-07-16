@@ -16,7 +16,7 @@ function drawRouletteWheel() {
 
   if (canvas.getContext) {
     var outsideRadius = 250;
-    var textRadius = 200;
+    var textRadius = 220;
     var insideRadius = 0;
 
     ctx = canvas.getContext("2d");
@@ -26,7 +26,7 @@ function drawRouletteWheel() {
     ctx.fillStyle = 'rgba(0,0,0,0.0)';
     ctx.lineWidth = 0;
 
-    ctx.font = 'bold 15px Helvetica, Arial';
+    ctx.font = 'bold 14pt Helvetica, Arial';
 
     for (var i = 0; i < options.length; i++) {
       var angle = startAngle + i * arc;
@@ -55,7 +55,7 @@ function drawRouletteWheel() {
       // Quebra as palavras em colunas
       var words = text.split(" ");
       var line = "";
-      var lineHeight = 15;
+      var lineHeight = 20;
       var y = 0;
       for (var j = 0; j < words.length; j++) {
         var testLine = line + words[j] + " ";
@@ -87,46 +87,41 @@ function drawRouletteWheel() {
 
 
 
-    // Define o centro do círculo
-    var centerX = canvas.width / 2;
-    var centerY = canvas.height / 2;
+    // // Define o centro do círculo
+    // var centerX = canvas.width / 2;
+    // var centerY = canvas.height / 2;
 
-    // Define o raio do círculo
-    var radius = 40;
+    // // Define o raio do círculo
+    // var radius = 80;
 
-    // Define o gradiente
-    var gradient = ctx.createLinearGradient(centerX - radius, centerY - radius, centerX + radius, centerY + radius);
-    gradient.addColorStop(0.3, "yellow");
-    gradient.addColorStop(1, "goldenrod");
-    gradient.addColorStop(0.3, "yellow");
+    // // Define o gradiente
+    // var gradient = ctx.createLinearGradient(centerX - radius, centerY - radius, centerX + radius, centerY + radius);
+    // gradient.addColorStop(0.3, "yellow");
+    // gradient.addColorStop(1, "goldenrod");
+    // gradient.addColorStop(0.3, "yellow");
 
 
 
-    // Define o preenchimento do círculo como o gradiente
-    ctx.fillStyle = gradient;
+    // // Define o preenchimento do círculo como o gradiente
+    // ctx.fillStyle = gradient;
 
-    // Desenha o círculo
-    ctx.beginPath();
-    ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
-    ctx.fill();
-    ctx.closePath();
+    // // Desenha o círculo
+    // ctx.beginPath();
+    // ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
+    // ctx.fill();
+    // ctx.closePath();
 
-    // Define o estilo do texto
-    ctx.font = "bold 15px Arial";
-    ctx.fillStyle = "black";
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
+    // // Define o estilo do texto
+    // ctx.font = "bold 20pt Arial";
+    // ctx.fillStyle = "black";
+    // ctx.textAlign = "center";
+    // ctx.textBaseline = "middle";
 
-    // Define o texto
-    var text = "GIRAR";
+    // // Define o texto
+    // var text = "GIRAR";
 
-    // // Define o evento de clique do botão
-    // canvas.addEventListener("click", function (event) {
-    //     spin();
-    // });
-
-    // Desenha o texto dentro do círculo
-    ctx.fillText(text, centerX, centerY);
+    // // Desenha o texto dentro do círculo
+    // ctx.fillText(text, centerX, centerY);
 
 
 
@@ -135,9 +130,13 @@ function drawRouletteWheel() {
 }
 function spin() {
 
-  spinAngleStart = Math.random() * 10 + 10;
+  spinAngleStart = 11.96;// Math.random() * 10 + 10;
   spinTime = 0;
-  spinTimeTotal = Math.random() * 3 + 4 * 1000;
+  spinTimeTotal = 4000;//Math.random() * 3 + 4 * 1000;
+
+  // console.log('sping_angle: ' + spinAngleStart);
+  // console.log('spin_total: ' + spinTimeTotal);
+
   rotateWheel();
 }
 
@@ -153,6 +152,8 @@ function rotateWheel() {
   spinTimeout = setTimeout('rotateWheel()', 30);
 }
 
+
+
 function stopRotateWheel() {
   clearTimeout(spinTimeout);
   var degrees = startAngle * 180 / Math.PI + 90;
@@ -167,16 +168,16 @@ function stopRotateWheel() {
 
   if(text != options[1])
   {
-    document.getElementById('text-ganho').innerHTML = text;
-    let modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('modal_ganho')) // Returns a Bootstrap modal instance
+    document.getElementById('text-ganho').innerHTML = text + " para novos jogadores é seu!";
+    let modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('sucesso-modal')) // Returns a Bootstrap modal instance
     ativarBotao();
     // Show or hide:
     modal.show();
   }
   else
   {
-    document.getElementById('text-modal').innerHTML = text;
-    let modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('exampleModal')) // Returns a Bootstrap modal instance
+    document.getElementById('text-modal').innerHTML = "INFELIZMENTE, VOCÊ NÃO TEVE SORTE EM SUA PRIMEIRA RODADA.";
+    let modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('modal-novamente')) // Returns a Bootstrap modal instance
     ativarBotao();
     // Show or hide:
     modal.show();

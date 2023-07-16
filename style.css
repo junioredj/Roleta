@@ -1,3 +1,11 @@
+body
+{
+    background-image: url('background.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
 #background-roleta
 {
     /* background-color: red; */
@@ -6,6 +14,11 @@
     align-items: center;
     
 
+}
+#spin-win
+{
+    position: absolute;
+    width: 80%;
 }
 #roleta
 {
@@ -16,16 +29,43 @@
 
     
 }
+#girar
+{
+    position: absolute; 
+    margin-top: -60px; 
+    margin-left: 10px;
+    font-weight: 700; 
+    font-size: 18pt;
+    
+}
 #spin
 {
     margin-top: -55px;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(0,0,0, 0);
+    border: none;
+    background-image: url('button.svg'); 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
+
+}
+#spin:hover
+{
+    transform: rotate(40deg);
+    transition: transform 0.3s linear;
+
+}
+#contador
+{
     position: absolute;
     width: 80px;
     height: 80px;
     background-color: rgba(0,0,0, 0);
     border: none;
 }
-
 @media only screen and (max-width: 800px) {
 
     #roleta
@@ -39,13 +79,29 @@
     #spin
     {
         margin-top: -6%;
-        width: 8%;
-        height: 8vw;
+        width: 100px;
+        height: 100px;
     }
 
+    #girar
+    {
+        font-size: 11pt;
+        margin-top: -30px;
+    }
+
+    #parabens
+    {
+        width: 80%;
+    }
     #img-roleta
     {
         width: 100%;
+    }
+    #decisao-magico
+    {
+       
+        /* margin-top: 10px;
+        color: red !important; */
     }
     
   }
