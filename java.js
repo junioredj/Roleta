@@ -163,12 +163,24 @@ function stopRotateWheel() {
   var text = options[index]
 
 
-  document.getElementById('text-modal').innerHTML = text;
+  
 
-  let modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('exampleModal')) // Returns a Bootstrap modal instance
-  ativarBotao();
-  // Show or hide:
-  modal.show();
+  if(text != options[1])
+  {
+    document.getElementById('text-ganho').innerHTML = text;
+    let modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('modal_ganho')) // Returns a Bootstrap modal instance
+    ativarBotao();
+    // Show or hide:
+    modal.show();
+  }
+  else
+  {
+    document.getElementById('text-modal').innerHTML = text;
+    let modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('exampleModal')) // Returns a Bootstrap modal instance
+    ativarBotao();
+    // Show or hide:
+    modal.show();
+  }
 
   //   alert(text);
   //   ctx.fillText(text, 250 - ctx.measureText(text).width / 2, 250 + 10);
