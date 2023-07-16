@@ -1,0 +1,54 @@
+#background-roleta
+{
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+#roleta
+{
+    width: 480px;
+    height: 480px;
+    margin-top: -55px;
+    position: absolute;
+
+    
+}
+#spin
+{
+    margin-top: -55px;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: rgba(0,0,0, 0);
+    border: none;
+}
+
+@media only screen and (max-width: 800px) {
+    body {
+      background-color: lightblue;
+    }
+
+    #roleta
+    {
+        width: 58%;
+        height: 58vw;
+        margin-top: -6%;
+        /* offset-anchor: -50px; */
+    }
+
+    #spin
+    {
+        margin-top: -6%;
+        width: 8%;
+        height: 8vw;
+    }
+
+    #img-roleta
+    {
+        width: 100%;
+    }
+    
+  }
