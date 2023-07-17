@@ -66,27 +66,41 @@ body
     background-color: rgba(0,0,0, 0);
     border: none;
 }
+#img-roleta
+{
+    content:url("background-roleta-lg.png");
+}
+.text {
+    color: yellow;
+    text-shadow: 4px 4px 4px rgba(255, 0, 0, 0.8);
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 3.5rem;
+}
 @media only screen and (max-width: 800px) {
 
     #roleta
     {
-        width: 58%;
-        height: 58vw;
-        margin-top: -6%;
+        width: 78%;
+        height: 78vw;
+        margin-top: -8%;
         /* offset-anchor: -50px; */
     }
+
 
     #spin
     {
         margin-top: -6%;
-        width: 100px;
-        height: 100px;
+        width: 30%;
+        height: 30vw;
     }
 
     #girar
     {
-        font-size: 11pt;
+        font-size:4vw;
         margin-top: -30px;
+        margin-left: 5px;
+        font-weight: 800;
     }
 
     #parabens
@@ -96,6 +110,7 @@ body
     #img-roleta
     {
         width: 100%;
+        content:url("background-roleta.png");
     }
     #decisao-magico
     {

@@ -26,7 +26,7 @@ function drawRouletteWheel() {
     ctx.fillStyle = 'rgba(0,0,0,0.0)';
     ctx.lineWidth = 0;
 
-    ctx.font = 'bold 14pt Helvetica, Arial';
+    ctx.font = 'bold 14pt Arial';
 
     for (var i = 0; i < options.length; i++) {
       var angle = startAngle + i * arc;
@@ -55,7 +55,7 @@ function drawRouletteWheel() {
       // Quebra as palavras em colunas
       var words = text.split(" ");
       var line = "";
-      var lineHeight = 20;
+      var lineHeight = 25;
       var y = 0;
       for (var j = 0; j < words.length; j++) {
         var testLine = line + words[j] + " ";
